@@ -4,10 +4,6 @@ type Ecommerce interface {
 	Total() float64
 	Adicionar(p Produto)
 }
-
-type Vender interface {
-	X()
-}
 type Loja struct {
 	products []Produto
 }

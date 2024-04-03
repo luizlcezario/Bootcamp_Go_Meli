@@ -3,7 +3,7 @@ package main
 type Sizes int
 
 const (
-	Undefinde Sizes = iota
+	Undefined Sizes = iota
 	Pequeno
 	Medio
 	Grande
@@ -34,7 +34,7 @@ func (p produto) CalcularCusto() float64 {
 	case Medio:
 		return p.price * 1.03
 	case Grande:
-		return (p.price * 1.06) + 250
+		return (p.price * 1.06) + 2500
 	default:
 		return p.price
 	}
