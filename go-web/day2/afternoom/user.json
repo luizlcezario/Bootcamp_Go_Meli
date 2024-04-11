@@ -38,5 +38,15 @@
   "height": 1.9,
   "is_active": true,
   "created_at": "2024-04-08T11:06:05.887781-03:00"
+ },
+ {
+  "id": "7298b22a3b6c42e7d49b8de040e9d0ee64c5c4485c51e9fec411fa10bc035f48",
+  "name": "joao",
+  "sour_name": "teixeira",
+  "email": "jpteixeira@gmail.com",
+  "age": 20,
+  "height": 1.76,
+  "is_active": true,
+  "created_at": "2024-04-10T15:56:49.858737-03:00"
  }
 ]

@@ -10,7 +10,7 @@ import (
 type Service interface {
 	GetAllAndFilter(query url.Values) ([]User, error)
 	FindById(id string) (User, error)
-	Store(user User) (User, error)
+	Store(name, sourName, email string, age int, heigth float32) (User, error)
 }
 
 type UserService struct {
@@ -30,6 +30,7 @@ func (us *UserService) FindById(id string) (User, error) {
 
 func (us *UserService) GetAllAndFilter(query url.Values) ([]User, error) {
 	result, err := us.repository.GetAll()
+
 	if err != nil {
 		return []User{}, err
 	}
@@ -44,6 +45,6 @@ func (us *UserService) GetAllAndFilter(query url.Values) ([]User, error) {
 	return result, nil
 }
 
-func (us *UserService) Store(user User) (User, error) {
-	return us.repository.Store(user)
+func (us *UserService) Store(name, sourName, email string, age int, height float32) (User, error) {
+	return us.repository.Store(*NewUser(name, sourName, email, age, height, true))
 }

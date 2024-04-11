@@ -22,6 +22,7 @@ func main() {
 	gropuser := r.Group("/user")
 	gropuser.GET("/all", usersHandler.ListAllFilter)
 	gropuser.GET("/:id", usersHandler.FindByIdController)
+	gropuser.POST("/create", usersHandler.CreateNewUser)
 	if err := r.Run(); err == nil {
 		fmt.Println("Server Online -->-->")
 	}
