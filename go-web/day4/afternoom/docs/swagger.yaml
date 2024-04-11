@@ -1,0 +1,179 @@
+definitions:
+  handler.ReqCreateUser:
+    properties:
+      age:
+        minimum: 18
+        type: integer
+      email:
+        minLength: 6
+        type: string
+      height:
+        minimum: 1
+        type: number
+      name:
+        maxLength: 30
+        minLength: 2
+        type: string
+      sour_name:
+        maxLength: 30
+        minLength: 2
+        type: string
+    type: object
+  webpack.Response:
+    properties:
+      data: {}
+      error_message:
+        type: string
+      status:
+        type: integer
+    type: object
+info:
+  contact:
+    name: API Support
+    url: https://developers.mercadolibre.com.ar/support
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developers.mercadolibre.com.ar/es_ar/terminos-y-condiciones
+  title: Mli Bootcamp Api
+  version: "1.0"
+paths:
+  /user/:id:
+    delete:
+      consumes:
+      - application/json
+      description: find a user by id and try to delete it from the store
+      parameters:
+      - description: id do user
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+          schema:
+            $ref: '#/definitions/webpack.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/webpack.Response'
+      summary: delete user
+    get:
+      consumes:
+      - application/json
+      description: get User
+      parameters:
+      - description: id do user
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            $ref: '#/definitions/webpack.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/webpack.Response'
+      summary: find User
+    patch:
+      consumes:
+      - application/json
+      description: find a user by id and try to delete it from the store
+      parameters:
+      - description: id do user
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.ReqCreateUser'
+      - description: id do user
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/webpack.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/webpack.Response'
+      summary: patch user
+  /user/all:
+    get:
+      consumes:
+      - application/json
+      description: get users
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: Accepted
+          schema:
+            $ref: '#/definitions/webpack.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/webpack.Response'
+      summary: List users
+  /user/change/:id:
+    put:
+      consumes:
+      - application/json
+      description: find user by id and update the fields
+      parameters:
+      - description: body template
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.ReqCreateUser'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/webpack.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/webpack.Response'
+      summary: update user
+  /user/create:
+    post:
+      consumes:
+      - application/json
+      description: Create user using a entity
+      parameters:
+      - description: body template
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.ReqCreateUser'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/webpack.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/webpack.Response'
+      summary: create user
+swagger: "2.0"
