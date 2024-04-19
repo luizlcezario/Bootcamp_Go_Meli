@@ -61,6 +61,8 @@ paths:
           schema:
             $ref: '#/definitions/webpack.Response'
       summary: delete user
+      tags:
+      - User
     get:
       consumes:
       - application/json
@@ -83,6 +85,8 @@ paths:
           schema:
             $ref: '#/definitions/webpack.Response'
       summary: find User
+      tags:
+      - User
     patch:
       consumes:
       - application/json
@@ -111,6 +115,8 @@ paths:
           schema:
             $ref: '#/definitions/webpack.Response'
       summary: patch user
+      tags:
+      - User
   /user/all:
     get:
       consumes:
@@ -128,6 +134,8 @@ paths:
           schema:
             $ref: '#/definitions/webpack.Response'
       summary: List users
+      tags:
+      - User
   /user/change/:id:
     put:
       consumes:
@@ -152,6 +160,8 @@ paths:
           schema:
             $ref: '#/definitions/webpack.Response'
       summary: update user
+      tags:
+      - User
   /user/create:
     post:
       consumes:
@@ -176,4 +186,6 @@ paths:
           schema:
             $ref: '#/definitions/webpack.Response'
       summary: create user
+      tags:
+      - User
 swagger: "2.0"

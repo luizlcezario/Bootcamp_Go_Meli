@@ -23,6 +23,9 @@
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "User"
+                ],
                 "summary": "find User",
                 "parameters": [
                     {
@@ -56,6 +59,9 @@
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "User"
+                ],
                 "summary": "delete user",
                 "parameters": [
                     {
@@ -88,6 +94,9 @@
                 ],
                 "produces": [
                     "application/json"
+                ],
+                "tags": [
+                    "User"
                 ],
                 "summary": "patch user",
                 "parameters": [
@@ -133,6 +142,9 @@
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "User"
+                ],
                 "summary": "List users",
                 "responses": {
                     "202": {
@@ -158,6 +170,9 @@
                 ],
                 "produces": [
                     "application/json"
+                ],
+                "tags": [
+                    "User"
                 ],
                 "summary": "update user",
                 "parameters": [
@@ -195,6 +210,9 @@
                 ],
                 "produces": [
                     "application/json"
+                ],
+                "tags": [
+                    "User"
                 ],
                 "summary": "create user",
                 "parameters": [

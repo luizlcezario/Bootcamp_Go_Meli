@@ -28,6 +28,7 @@ func NewHandlerUser(se users.Service) *HandlerUser {
 
 // ListUsers godoc
 // @Summary List users
+// @Tags User
 // @Description get users
 // @securityDefinitions.basic BasicAuth
 // @Accept json
@@ -45,6 +46,7 @@ func (se *HandlerUser) ListAllFilter(ctx *gin.Context) {
 
 // FindUserId
 // @Summary find User
+// @Tags User
 // @Description get User
 // @Accept json
 // @Produce json
@@ -63,6 +65,7 @@ func (se *HandlerUser) FindByIdController(ctx *gin.Context) {
 
 // PutUser godoc
 // @Summary update user
+// @Tags User
 // @Description find user by id and update the fields
 // @Param request body handler.ReqCreateUser true "body template"
 // @Accept json
@@ -86,6 +89,7 @@ func (se *HandlerUser) UpdateAllUser(ctx *gin.Context) {
 
 // CreateUser godoc
 // @Summary create user
+// @Tags User
 // @Description Create user using a entity
 // @securityDefinitions.basic BasicAuth
 // @Param request body handler.ReqCreateUser true "body template"
@@ -109,6 +113,7 @@ func (se *HandlerUser) CreateNewUser(ctx *gin.Context) {
 
 // DeleteUser godoc
 // @Summary delete user
+// @Tags User
 // @Description find a user by id and try to delete it from the store
 // @Param id path string true "id do user"
 // @Accept json
@@ -126,6 +131,7 @@ func (se *HandlerUser) DeleteUser(ctx *gin.Context) {
 
 // ChangePartial godoc
 // @Summary patch user
+// @Tags User
 // @Description find a user by id and try to delete it from the store
 // @Param request body handler.ReqCreateUser true "id do user"
 // @Param id path string true "id do user"

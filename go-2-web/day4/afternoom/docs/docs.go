@@ -32,6 +32,9 @@ const docTemplate = `{
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "User"
+                ],
                 "summary": "find User",
                 "parameters": [
                     {
@@ -65,6 +68,9 @@ const docTemplate = `{
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "User"
+                ],
                 "summary": "delete user",
                 "parameters": [
                     {
@@ -97,6 +103,9 @@ const docTemplate = `{
                 ],
                 "produces": [
                     "application/json"
+                ],
+                "tags": [
+                    "User"
                 ],
                 "summary": "patch user",
                 "parameters": [
@@ -142,6 +151,9 @@ const docTemplate = `{
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "User"
+                ],
                 "summary": "List users",
                 "responses": {
                     "202": {
@@ -167,6 +179,9 @@ const docTemplate = `{
                 ],
                 "produces": [
                     "application/json"
+                ],
+                "tags": [
+                    "User"
                 ],
                 "summary": "update user",
                 "parameters": [
@@ -204,6 +219,9 @@ const docTemplate = `{
                 ],
                 "produces": [
                     "application/json"
+                ],
+                "tags": [
+                    "User"
                 ],
                 "summary": "create user",
                 "parameters": [
