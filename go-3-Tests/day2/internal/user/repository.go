@@ -62,7 +62,7 @@ func (m *UserRepository) GetAll() ([]User, error) {
 		return usersCache, nil
 	}
 	var user []User
-	if _, err := m.db.Read(&user); err != nil {
+	if err := m.db.Read(&user); err != nil {
 		return usersCache, err
 	} else {
 		usersCache = make([]User, len(user))
@@ -77,7 +77,7 @@ func (m *UserRepository) Store(us User) (User, error) {
 		return User{}, errors.New("failed to marshal the users list")
 	}
 	usersCache = append(user, us)
-	if _, err := m.db.Write(usersCache); err != nil {
+	if err := m.db.Write(usersCache); err != nil {
 		return User{}, err
 	}
 	return us, nil
@@ -87,7 +87,7 @@ func (e *UserRepository) Delete(us User) error {
 	usersCache = slices.DeleteFunc(usersCache, func(e User) bool {
 		return (e == us)
 	})
-	if _, err := e.db.Write(usersCache); err != nil {
+	if err := e.db.Write(usersCache); err != nil {
 		return err
 	}
 	return nil

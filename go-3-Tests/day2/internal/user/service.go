@@ -20,6 +20,7 @@ type UserService struct {
 }
 
 func NewService(r Repository) Service {
+	usersCache = []User{}
 	return &UserService{
 		repository: r,
 	}

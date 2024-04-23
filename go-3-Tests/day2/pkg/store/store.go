@@ -5,8 +5,8 @@ const (
 )
 
 type Store interface {
-	Read(data interface{}) (interface{}, error)
-	Write(data interface{}) (interface{}, error)
+	Read(data interface{}) error
+	Write(data interface{}) error
 }
 
 func NewStore(store uint, fileName string) Store {
