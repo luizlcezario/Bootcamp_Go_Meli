@@ -31,10 +31,15 @@ func TestSliceOrder(t *testing.T) {
 	})
 
 	t.Run("Testing if array is sort and original stay equals", func(t *testing.T) {
+		// variavel
 		num1 := []int{1, 5, 2, 3, 7}
 		original := []int{1, 5, 2, 3, 7}
 		expect := []int{1, 2, 3, 5, 7}
+
+		// exec
 		result := OrdemCres(num1)
+
+		// comp
 		assert.Equal(t, result, expect, "should be equal")
 		assert.Equal(t, num1, original, "should be equal")
 	})
