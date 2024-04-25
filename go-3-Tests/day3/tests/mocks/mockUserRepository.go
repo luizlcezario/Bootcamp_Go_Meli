@@ -14,23 +14,23 @@ func (m *MockUserRepository) GetAll() ([]User, error) {
 	return args.Get(0).([]User), args.Error(1)
 }
 func (m *MockUserRepository) FindById(id string) (User, error) {
-	args := m.Called()
+	args := m.Called(id)
 	return args.Get(0).(User), args.Error(1)
 }
 func (m *MockUserRepository) FindByEmail(email string) (User, error) {
-	args := m.Called()
+	args := m.Called(email)
 	return args.Get(0).(User), args.Error(1)
 }
 func (m *MockUserRepository) Store(us User) (User, error) {
-	args := m.Called()
+	args := m.Called(us)
 	return args.Get(0).(User), args.Error(1)
 }
 func (m *MockUserRepository) Update(dst User, src User) (User, error) {
-	args := m.Called()
+	args := m.Called(dst, src)
 	return args.Get(0).(User), args.Error(1)
 }
 func (m *MockUserRepository) Delete(us User) error {
-	args := m.Called()
+	args := m.Called(us)
 	return args.Error(0)
 }
 func (m *MockUserRepository) GetQueryParametersValids() map[string]int {
