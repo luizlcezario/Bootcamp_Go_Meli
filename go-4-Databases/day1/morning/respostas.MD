@@ -1,0 +1,1 @@
+2. A chave primaria de employes deve ser o Id e a do departament tambem, pois seram campos gerados aleatoriamente e assim sendo tendo um grande range para se trabalhar, teremos uma chave estrageirod no formato um para muitos sendo assim o existem muitos funcionarios para um departamento como o lado mais fraco fica por conta do funcionairo e nele que colocamos a fk

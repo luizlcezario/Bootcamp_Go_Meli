@@ -14,8 +14,8 @@ import (
 func CreateRepository(t *testing.T) (*mocks.MockStore, Repository) {
 	t.Helper()
 	db := new(mocks.MockStore)
-	repository := UserRepository{db: db}
-	return db, &repository
+	repository := NewRepository(db)
+	return db, repository
 }
 
 func listExpect(t *testing.T) []User {
@@ -351,11 +351,4 @@ func TestRepositoryGetQueryParametersValid(t *testing.T) {
 	_, repository := CreateRepository(t)
 	res := repository.GetQueryParametersValids()
 	assert.Equal(t, map[string]int{"name": 2, "sourname": 3, "email": 4, "age": 5, "height": 6, "isactive": 7}, res)
-}
-
-func TestReposioryNew(t *testing.T) {
-	rep := NewRepository("test.json")
-
-	assert.NotNil(t, rep)
-	assert.IsType(t, &UserRepository{}, rep)
 }

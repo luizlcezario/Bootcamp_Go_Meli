@@ -9,7 +9,9 @@ import (
 	"github.com/luizlcezario/MelicampGoWeb/cmd/server/handler"
 	"github.com/luizlcezario/MelicampGoWeb/cmd/server/middleware"
 	"github.com/luizlcezario/MelicampGoWeb/docs"
+	"github.com/luizlcezario/MelicampGoWeb/internal/domain"
 	users "github.com/luizlcezario/MelicampGoWeb/internal/user"
+	"github.com/luizlcezario/MelicampGoWeb/pkg/store"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -28,7 +30,7 @@ func main() {
 		panic(err.Error())
 	}
 	r := gin.Default()
-	repo := users.NewRepository("user.json")
+	repo := users.NewRepository(store.NewStore[domain.User](store.FileType, "users.json"))
 	service := users.NewService(repo)
 	usersHandler := handler.NewHandlerUser(service)
 

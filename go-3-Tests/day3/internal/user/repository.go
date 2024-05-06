@@ -23,7 +23,7 @@ type UserRepository struct {
 	usersCache []User
 }
 
-func NewRepository(file string) Repository {
+func NewRepository(db store.Store) Repository {
 	return &UserRepository{
 		db: store.NewStore[[]User](store.FileType, "user.json"),
 	}
