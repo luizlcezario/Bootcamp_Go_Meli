@@ -1,4 +1,5 @@
 1. Explique o conceito de normalização e por que ele é usado.
+
 2. Adicione um filme à tabela de filmes.
 3. Adicione um gênero à tabela de gêneros.
 4. Associe o filme do Ex 2. ao gênero criado no Ex 3.
